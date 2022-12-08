@@ -10,8 +10,8 @@ WORKDIR /srv
 
 # Install requirements.
 COPY requirements.txt /srv/
-RUN pip install --upgrade pip
-RUN pip install --upgrade --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && \
+    pip install --upgrade --no-cache-dir -r requirements.txt
 
 # Copy whole project to the container.
 COPY . /srv/
